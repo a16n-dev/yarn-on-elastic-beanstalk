@@ -2,11 +2,11 @@ data aws_iam_policy eb_policy {
   arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkWebTier"
 }
 
-resource "aws_iam_instance_profile" "eb_instance_profile" {
+resource aws_iam_instance_profile eb_instance_profile {
   role = aws_iam_role.eb_role.name
 }
 
-resource "aws_iam_role" "eb_role" {
+resource aws_iam_role eb_role {
   name = "ElasticBeanstalkInstanceProfileRole"
 
   assume_role_policy = jsonencode({
